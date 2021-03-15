@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'first_app/base.html' %}
+  {% block body_block %}
+    <h1>This is the Access Record Table</h1>
+    <div class="table">
+      {% if access_records %}
+          <table>
+            <thead>
+              <th>Site Name</th>
+              <th>Date Access</th>
+            </thead>
+            <tbody>
+                {% for acc in access_records %}
+                  <tr>
+                    <td>{{acc.name}}</td>
+                    <td>{{acc.date}}</td>
+                  </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+      {% else %}
+        <p>No Access Record Found</p>
+      {% endif %}
+    </div>
+
+  {% endblock %}

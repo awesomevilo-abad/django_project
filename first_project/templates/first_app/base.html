@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Base HTML</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+
+  </head>
+  <body>
+    <nav class='navbar navbar-default navbar-static-top'>
+        <div class="container">
+          <ul class='nav navbar-nav'>
+            <li ><a class='navbar-brand' href="{% url 'index' %}">BRAND</a></li>
+            <li ><a class='navbar-link' href="{% url 'admin:index' %}">Admin</a></li>
+            <li ><a class='navbar-link' href="{% url 'first_app:other' %}">Other</a></li>
+            <li><a class='navbar-link' href="{% url 'first_app:table_access_records' %}">Table</a></li>
+            <li><a class='navbar-link' href="{% url 'first_app:form_name' %}">Form</a></li>
+            <li><a class="navbar-link" href="{% url 'first_app:store_details' %}">Store </a></li>
+            <li><a class="navbar-link" href="{% url 'first_app:signup'%}">Sign Up</a> </li>
+          </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+      {% block body_block %}
+      <!-- Anything outside of this will be inherited once extend -->
+      {% endblock %}
+    </div>
+  </body>
+</html>

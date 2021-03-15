@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'first_app/base.html' %}
+{% block body_block %}
+        <h1>Welcome!</h1>
+        <h2>Sign Up</h2>
+
+        <form method="post">
+          {{ form.as_p }}
+          {% csrf_token %}
+          <input type="submit" value="Submit">
+        </form>
+{% endblock %}
